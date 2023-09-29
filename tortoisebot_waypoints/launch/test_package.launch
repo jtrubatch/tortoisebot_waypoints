@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<launch>
+  <!-- Gazebo -->
+  <include file="$(find tortoisebot_gazebo)/launch/tortoisebot_playground.launch"/>
+
+  <!-- Start the move_and_turn node -->
+  <node name="action_server" pkg="tortoisebot_waypoints" type="tortoisebot_action_server.py" output="screen"/>
+
+  <!-- Start the move_and_turn test -->
+  <test test-name="tortoisebot_action_test" pkg="tortoisebot_waypoints" type="tortoisebot_action_test.py"/>
+</launch>
